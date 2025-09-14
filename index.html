@@ -29,6 +29,13 @@
             background-size: 20px 20px;
             opacity: 0.3;
         }
+        /* POPRAWIONY STYL DLA OKRĄGŁEGO LOGO - PRZENIESIONY TUTAJ */
+        .round-logo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%; /* To jest kluczowa właściwość, która tworzy koło */
+            object-fit: cover;  /* To zapobiega zniekształceniu obrazka w kole */
+        }
     </style>
 </head>
 <body class="flex items-center justify-center min-h-screen p-4">
@@ -53,15 +60,6 @@
 
         <div class="absolute inset-0 bg-pattern"></div>
         
-        <style>
-            .round-logo {
-                width: 250px;
-                height: 250px;
-                border-radius: 50%; /* To jest kluczowa właściwość, która tworzy koło */
-                object-fit: cover;  /* To zapobiega zniekształceniu obrazka w kole */
-            }
-        </style>
-
         <header class="relative text-center pt-12 pb-8 px-8">
             <div class="inline-block p-4 rounded-full bg-white shadow-lg z-10">
                 <img src="it.png" alt="Suited Study Logo" class="round-logo">
