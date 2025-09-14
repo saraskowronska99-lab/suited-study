@@ -4,154 +4,96 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Suited Study - Angielski dopasowany do Ciebie</title>
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: sans-serif;
+    background-color: #D4C9BF;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
-header {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #6c5ce7;
-    color: white;
+.lilac-bg { background-color: #E2CFF4; }
+.dark-lilac-text { color: #8E6D9E; }
+.lilac-border { border-color: #E2CFF4; }
+.bg-pattern {
+    background-image: radial-gradient(circle, #E2CFF4 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
 }
 
-header img {
-    width: 180px;
-    height: auto;
+/* Animacja logo */
+.animated-logo {
     animation: floatLogo 3s ease-in-out infinite;
+    transform-origin: center;
 }
 
 @keyframes floatLogo {
     0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #6c5ce7;
-}
-
-nav button {
-    padding: 15px 25px;
-    color: white;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-nav button:hover, nav button.active {
-    background-color: #a29bfe;
-    border-radius: 5px;
-}
-
-section {
-    display: none;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 900px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-section.active {
-    display: block;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table, th, td {
-    border: 1px solid #ccc;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
+    50% { transform: translateY(-8px); }
 }
 </style>
 </head>
-<body>
+<body class="flex items-center justify-center min-h-screen p-4">
 
-<header>
-    <img src="it.png" alt="Suited Study Logo">
-    <h1>Suited Study</h1>
-    <p>Angielski dopasowany do Ciebie</p>
-</header>
+<div class="relative w-full max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-white">
+    <div class="absolute inset-0 bg-pattern"></div>
 
-<nav>
-    <button class="tab-btn active" data-tab="about">O mnie</button>
-    <button class="tab-btn" data-tab="courses">Zakres zajęć</button>
-    <button class="tab-btn" data-tab="pricing">Cennik</button>
-    <button class="tab-btn" data-tab="terms">Regulamin</button>
-</nav>
+    <!-- Header -->
+    <header class="relative text-center pt-12 pb-8 px-8">
+        <div class="inline-block p-4 rounded-full bg-white shadow-lg z-10">
+            <img src="it.png" alt="Suited Study Logo" class="animated-logo" style="width:250px; height:auto;">
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold dark-lilac-text mt-6">Suited Study</h1>
+        <p class="text-xl sm:text-2xl text-gray-600 font-light mt-2">Angielski dopasowany do Ciebie</p>
+    </header>
 
-<section id="about" class="active">
-    <h2>O mnie</h2>
-    <p>Nazywam się Sara Skowrońska. Ukończyłam filologię angielską oraz psychologię w zarządzaniu.</p>
-    <p>Mam doświadczenie w pracy w międzynarodowej korporacji, a także ponad rok praktyki jako nauczyciel w szkole językowej. Podczas studiów odbyłam również praktyki w biurze tłumaczeń. Łączę wiedzę językową i psychologiczną, co pozwala mi lepiej rozumieć różne style uczenia się i dostosowywać metody do indywidualnych potrzeb uczniów.</p>
-    <p><strong>Kontakt:</strong> <a href="mailto:suitedstudy@gmail.com">suitedstudy@gmail.com</a></p>
-</section>
+    <!-- Zakładki -->
+    <div class="px-6 sm:px-12 pb-8">
+        <div class="flex justify-center space-x-4 mb-6">
+            <button class="tab-btn px-4 py-2 rounded-lg bg-lilac-bg text-white font-semibold" data-tab="o-mnie">O mnie</button>
+            <button class="tab-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-semibold" data-tab="zakres-zajec">Zakres zajęć</button>
+            <button class="tab-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-semibold" data-tab="cennik">Cennik</button>
+            <button class="tab-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-semibold" data-tab="regulamin">Regulamin</button>
+        </div>
 
-<section id="courses">
-    <h2>Zakres zajęć</h2>
-    <ul>
-        <li>Język ogólny (A1–C1)</li>
-        <li>Konwersacje i przełamywanie bariery językowej</li>
-        <li>Przygotowanie do matury i egzaminów językowych</li>
-        <li>Język biznesowy i zawodowy</li>
-    </ul>
-    <p>Zajęcia są prowadzone online (Google Meet).</p>
-</section>
+        <!-- Treści zakładek -->
+        <section id="o-mnie" class="tab-content" style="display:block">
+            <h2 class="text-3xl font-bold dark-lilac-text border-b-2 lilac-border pb-2 mb-6">O mnie</h2>
+            <p>Nazywam się Sara Skowrońska. Ukończyłam filologię angielską oraz psychologię w zarządzaniu.</p>
+            <p>Mam doświadczenie w pracy w międzynarodowej korporacji, a także ponad rok praktyki jako nauczyciel w szkole językowej. Podczas studiów odbyłam również praktyki w biurze tłumaczeń. Łączę wiedzę językową i psychologiczną, co pozwala mi lepiej rozumieć różne style uczenia się i dostosowywać metody do indywidualnych potrzeb uczniów.</p>
+            <p><strong>Kontakt:</strong> <a href="mailto:suitedstudy@gmail.com" class="text-blue-600 hover:underline">suitedstudy@gmail.com</a></p>
+        </section>
 
-<section id="pricing">
-    <h2>Cennik zajęć</h2>
-    <table>
-        <tr><td>Przygotowanie do matury</td><td>100 zł / 50 min</td></tr>
-        <tr><td>Przygotowanie do egzaminu ósmoklasisty</td><td>85 zł / 45 min</td></tr>
-        <tr><td>Zajęcia podnoszące poziom językowy (A2/B1)</td><td>80 zł / 45 min</td></tr>
-        <tr><td>Zajęcia doszkalające (klasy 3-7)</td><td>70 zł / 40 min</td></tr>
-        <tr><td>Business English</td><td>100 zł / 50 min</td></tr>
-    </table>
-</section>
+        <section id="zakres-zajec" class="tab-content" style="display:none">
+            <h2 class="text-3xl font-bold dark-lilac-text border-b-2 lilac-border pb-2 mb-6">Zakres zajęć</h2>
+            <ul class="list-disc ml-6">
+                <li>Język ogólny (A1–C1)</li>
+                <li>Konwersacje i przełamywanie bariery językowej</li>
+                <li>Przygotowanie do matury i egzaminów językowych</li>
+                <li>Język biznesowy i zawodowy</li>
+            </ul>
+            <p class="mt-2 text-gray-600 text-sm">Zajęcia są prowadzone online (Google Meet).</p>
+        </section>
 
-<section id="terms">
-    <h2>Regulamin</h2>
-    <p>Regulamin określa zasady udziału w zajęciach językowych prowadzonych przez Suited Study. Szczegółowe punkty zawarte są w treści regulaminu.</p>
-</section>
+        <section id="cennik" class="tab-content" style="display:none">
+            <h2 class="text-3xl font-bold dark-lilac-text border-b-2 lilac-border pb-2 mb-6">Cennik zajęć</h2>
+            <table class="w-full text-left whitespace-nowrap border border-gray-300">
+                <thead class="bg-lilac-bg text-white">
+                    <tr>
+                        <th class="p-4">Rodzaj zajęć</th>
+                        <th class="p-4">Cena</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="p-4">Przygotowanie do matury</td><td class="p-4">100 zł / 50 min</td></tr>
+                    <tr class="bg-gray-50"><td class="p-4">Przygotowanie do egzaminu ósmoklasisty</td><td class="p-4">85 zł / 45 min</td></tr>
+                    <tr><td class="p-4">Zajęcia podnoszące poziom językowy (A2/B1)</td><td class="p-4">80 zł / 45 min</td></tr>
+                    <tr class="bg-gray-50"><td class="p-4">Zajęcia doszkalające (klasy 3-7)</td><td class="p-4">70 zł / 40 min</td></tr>
+                    <tr><td class="p-4">Business English</td><td class="p-4">100 zł / 50 min</td></tr>
+                </tbody>
+            </table>
+        </section>
 
-<script>
-const tabs = document.querySelectorAll('.tab-btn');
-const sections = document.querySelectorAll('section');
-
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        // Aktywacja przycisku
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        // Pokazanie odpowiedniej sekcji
-        const target = tab.dataset.tab;
-        sections.forEach(sec => {
-            if(sec.id === target) {
-                sec.classList.add('active');
-            } else {
-                sec.classList.remove('active');
-            }
-        });
-    });
-});
-</script>
-
-</body>
-</html>
+        <section id="regulamin" class=
