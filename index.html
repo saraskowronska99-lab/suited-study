@@ -1,59 +1,85 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suited Study</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #6c5ce7;
-            color: white;
-        }
-        header img {
-            width: 150px;
-            height: auto;
-            animation: floatLogo 3s ease-in-out infinite;
-        }
-        @keyframes floatLogo {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #6c5ce7;
-        }
-        nav a {
-            padding: 15px 30px;
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        nav a:hover {
-            background-color: #a29bfe;
-        }
-        section {
-            display: none;
-            padding: 20px;
-            margin: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        section.active {
-            display: block;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suited Study - Angielski dopasowany do Ciebie</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #6c5ce7;
+    color: white;
+}
+
+header img {
+    width: 180px;
+    height: auto;
+    animation: floatLogo 3s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #6c5ce7;
+}
+
+nav button {
+    padding: 15px 25px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+nav button:hover, nav button.active {
+    background-color: #a29bfe;
+    border-radius: 5px;
+}
+
+section {
+    display: none;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+section.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+</style>
 </head>
 <body>
 
@@ -64,15 +90,17 @@
 </header>
 
 <nav>
-    <a href="#" onclick="showSection('about')">O mnie</a>
-    <a href="#" onclick="showSection('courses')">Zakres zajęć</a>
-    <a href="#" onclick="showSection('pricing')">Cennik</a>
-    <a href="#" onclick="showSection('terms')">Regulamin</a>
+    <button class="tab-btn active" data-tab="about">O mnie</button>
+    <button class="tab-btn" data-tab="courses">Zakres zajęć</button>
+    <button class="tab-btn" data-tab="pricing">Cennik</button>
+    <button class="tab-btn" data-tab="terms">Regulamin</button>
 </nav>
 
 <section id="about" class="active">
     <h2>O mnie</h2>
-    <p>Nazywam się Sara Skowrońska. Ukończyłam filologię angielską oraz psychologię w zarządzaniu...</p>
+    <p>Nazywam się Sara Skowrońska. Ukończyłam filologię angielską oraz psychologię w zarządzaniu.</p>
+    <p>Mam doświadczenie w pracy w międzynarodowej korporacji, a także ponad rok praktyki jako nauczyciel w szkole językowej. Podczas studiów odbyłam również praktyki w biurze tłumaczeń. Łączę wiedzę językową i psychologiczną, co pozwala mi lepiej rozumieć różne style uczenia się i dostosowywać metody do indywidualnych potrzeb uczniów.</p>
+    <p><strong>Kontakt:</strong> <a href="mailto:suitedstudy@gmail.com">suitedstudy@gmail.com</a></p>
 </section>
 
 <section id="courses">
@@ -83,48 +111,46 @@
         <li>Przygotowanie do matury i egzaminów językowych</li>
         <li>Język biznesowy i zawodowy</li>
     </ul>
+    <p>Zajęcia są prowadzone online (Google Meet).</p>
 </section>
 
 <section id="pricing">
     <h2>Cennik zajęć</h2>
     <table>
-        <tr>
-            <td>Przygotowanie do matury</td>
-            <td>100 zł / 50 min</td>
-        </tr>
-        <tr>
-            <td>Przygotowanie do egzaminu ósmoklasisty</td>
-            <td>85 zł / 45 min</td>
-        </tr>
-        <tr>
-            <td>Zajęcia podnoszące poziom językowy (A2/B1)</td>
-            <td>80 zł / 45 min</td>
-        </tr>
-        <tr>
-            <td>Zajęcia doszkalające (klasy 3-7)</td>
-            <td>70 zł / 40 min</td>
-        </tr>
-        <tr>
-            <td>Business English</td>
-            <td>100 zł / 50 min</td>
-        </tr>
+        <tr><td>Przygotowanie do matury</td><td>100 zł / 50 min</td></tr>
+        <tr><td>Przygotowanie do egzaminu ósmoklasisty</td><td>85 zł / 45 min</td></tr>
+        <tr><td>Zajęcia podnoszące poziom językowy (A2/B1)</td><td>80 zł / 45 min</td></tr>
+        <tr><td>Zajęcia doszkalające (klasy 3-7)</td><td>70 zł / 40 min</td></tr>
+        <tr><td>Business English</td><td>100 zł / 50 min</td></tr>
     </table>
 </section>
 
 <section id="terms">
     <h2>Regulamin</h2>
-    <p>Regulamin określa zasady udziału w zajęciach językowych prowadzonych przez Suited Study...</p>
+    <p>Regulamin określa zasady udziału w zajęciach językowych prowadzonych przez Suited Study. Szczegółowe punkty zawarte są w treści regulaminu.</p>
 </section>
 
 <script>
-    function showSection(sectionId) {
-        const sections = document.querySelectorAll('section');
-        sections.forEach(section => {
-            section.classList.remove('active');
+const tabs = document.querySelectorAll('.tab-btn');
+const sections = document.querySelectorAll('section');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // Aktywacja przycisku
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // Pokazanie odpowiedniej sekcji
+        const target = tab.dataset.tab;
+        sections.forEach(sec => {
+            if(sec.id === target) {
+                sec.classList.add('active');
+            } else {
+                sec.classList.remove('active');
+            }
         });
-        const activeSection = document.getElementById(sectionId);
-        activeSection.classList.add('active');
-    }
+    });
+});
 </script>
 
 </body>
