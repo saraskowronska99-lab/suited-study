@@ -8,11 +8,11 @@
     <style>
         body {
             font-family: sans-serif;
-            background-color: #D4C9BF; /* ciemniejszy piaskowy */
+            background-color: #D4C9BF;
             color: #333;
         }
         .lilac-bg {
-            background-color: #E2CFF4; /* pastelowy liliowy */
+            background-color: #E2CFF4;
         }
         .dark-lilac-text {
             color: #8E6D9E;
@@ -25,26 +25,30 @@
             background-size: 20px 20px;
             opacity: 0.3;
         }
+        a:focus {
+            outline: 2px solid #8E6D9E;
+            outline-offset: 2px;
+        }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
+<body class="flex flex-col items-center justify-start min-h-screen p-4">
 
-    <div class="relative w-full max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-white">
+    <!-- Kontener główny -->
+    <div class="relative w-full max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-white">
         <div class="absolute inset-0 bg-pattern"></div>
-        
-        <!-- Header Section -->
-        <header class="relative text-center pt-12 pb-8 px-8">
-            <div class="inline-block p-4 rounded-full bg-white shadow-lg z-10">
-                <!-- Powiększone logo z bezpośrednim stylem -->
-                <img src="it.png" alt="Suited Study Logo" style="width:250px; height:auto;">
+
+        <!-- Header -->
+        <header class="relative text-center pt-16 pb-12 px-6 sm:px-12">
+            <div class="inline-block p-6 rounded-full bg-white shadow-lg z-10">
+                <img src="it.png" alt="Suited Study Logo" class="w-96 h-auto">
             </div>
-            <h1 class="text-4xl sm:text-5xl font-extrabold dark-lilac-text mt-6">Suited Study</h1>
+            <h1 class="text-5xl sm:text-6xl font-extrabold dark-lilac-text mt-6">Suited Study</h1>
             <p class="text-xl sm:text-2xl text-gray-600 font-light mt-2">Angielski dopasowany do Ciebie</p>
         </header>
 
         <!-- Main Content -->
-        <main class="relative px-6 sm:px-12 py-8 space-y-12 z-10">
-            
+        <main class="relative px-6 sm:px-12 py-12 space-y-16 z-10">
+
             <!-- O mnie -->
             <section id="o-mnie">
                 <h2 class="text-3xl font-bold dark-lilac-text border-b-2 lilac-border pb-2 mb-6">O mnie</h2>
