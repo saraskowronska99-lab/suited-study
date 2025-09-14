@@ -12,12 +12,18 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #D4C9BF;
+            background-color: #D4C9BF; /* Ciemniejszy piaskowy */
             color: #333;
         }
-        .lilac-bg { background-color: #E2CFF4; }
-        .dark-lilac-text { color: #8E6D9E; }
-        .lilac-border { border-color: #E2CFF4; }
+        .lilac-bg {
+            background-color: #E2CFF4; /* Bardziej pastelowy liliowy */
+        }
+        .dark-lilac-text {
+            color: #8E6D9E;
+        }
+        .lilac-border {
+            border-color: #E2CFF4;
+        }
         .bg-pattern {
             background-image: radial-gradient(circle, #E2CFF4 1px, transparent 1px);
             background-size: 20px 20px;
@@ -35,6 +41,7 @@
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
+            
             <ul id="menu-links" class="hidden md:flex justify-center items-center space-x-4 sm:space-x-8 text-lg font-semibold text-gray-700">
                 <li><a href="#o-mnie" class="dark-lilac-text hover:opacity-75 transition-opacity">O mnie</a></li>
                 <li><a href="#zakres-zajec" class="dark-lilac-text hover:opacity-75 transition-opacity">Zakres zajęć</a></li>
@@ -46,15 +53,23 @@
 
         <div class="absolute inset-0 bg-pattern"></div>
         
-<!-- Header Section -->
-    <header class="relative text-center pt-12 pb-8 px-8">
-        <div class="inline-block p-4 rounded-full bg-white shadow-lg z-10">
-            <!-- Logo z animacją kołysania -->
-            <img src="it.png" alt="Suited Study Logo" class="round-logo" style="width:250px; height:auto;">
-        </div>
-        <h1 class="text-4xl sm:text-5xl font-extrabold dark-lilac-text mt-6">Suited Study</h1>
-        <p class="text-xl sm:text-2xl text-gray-600 font-light mt-2">Angielski dopasowany do Ciebie</p>
-    </header>
+        <style>
+            .round-logo {
+                width: 250px;
+                height: 250px;
+                border-radius: 50%; /* To jest kluczowa właściwość, która tworzy koło */
+                object-fit: cover;  /* To zapobiega zniekształceniu obrazka w kole */
+            }
+        </style>
+
+        <header class="relative text-center pt-12 pb-8 px-8">
+            <div class="inline-block p-4 rounded-full bg-white shadow-lg z-10">
+                <img src="it.png" alt="Suited Study Logo" class="round-logo">
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-extrabold dark-lilac-text mt-6">Suited Study</h1>
+            <p class="text-xl sm:text-2xl text-gray-600 font-light mt-2">Angielski dopasowany do Ciebie</p>
+        </header>
+
 
         <main class="relative px-6 sm:px-12 py-8 space-y-12 z-10">
             
