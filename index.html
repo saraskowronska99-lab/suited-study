@@ -1,99 +1,219 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Suited Study - Angielski dopasowany do Ciebie</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-body {
-    font-family: sans-serif;
-    background-color: #D4C9BF;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
-
-.lilac-bg { background-color: #E2CFF4; }
-.dark-lilac-text { color: #8E6D9E; }
-.lilac-border { border-color: #E2CFF4; }
-.bg-pattern {
-    background-image: radial-gradient(circle, #E2CFF4 1px, transparent 1px);
-    background-size: 20px 20px;
-    opacity: 0.3;
-}
-
-/* Animacja logo */
-.animated-logo {
-    animation: floatLogo 3s ease-in-out infinite;
-    transform-origin: center;
-}
-
-@keyframes floatLogo {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suited Study - Angielski dopasowany do Ciebie | Sara Skowrońska</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #D4C9BF; /* Ciemniejszy piaskowy */
+            color: #333;
+        }
+        .lilac-bg {
+            background-color: #E2CFF4; /* Bardziej pastelowy liliowy */
+        }
+        .dark-lilac-text {
+            color: #8E6D9E;
+        }
+        .lilac-border {
+            border-color: #E2CFF4;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(circle, #E2CFF4 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+        }
+    </style>
 </head>
 <body class="flex items-center justify-center min-h-screen p-4">
 
-<div class="relative w-full max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-white">
-    <div class="absolute inset-0 bg-pattern"></div>
-
-    <!-- Header -->
-    <header class="relative text-center pt-12 pb-8 px-8">
-        <div class="inline-block p-4 rounded-full bg-white shadow-lg z-10">
-            <img src="it.png" alt="Suited Study Logo" class="animated-logo" style="width:250px; height:auto;">
-        </div>
-        <h1 class="text-4xl sm:text-5xl font-extrabold dark-lilac-text mt-6">Suited Study</h1>
-        <p class="text-xl sm:text-2xl text-gray-600 font-light mt-2">Angielski dopasowany do Ciebie</p>
-    </header>
-
-    <!-- Zakładki -->
-    <div class="px-6 sm:px-12 pb-8">
-        <div class="flex justify-center space-x-4 mb-6">
-            <button class="tab-btn px-4 py-2 rounded-lg bg-lilac-bg text-white font-semibold" data-tab="o-mnie">O mnie</button>
-            <button class="tab-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-semibold" data-tab="zakres-zajec">Zakres zajęć</button>
-            <button class="tab-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-semibold" data-tab="cennik">Cennik</button>
-            <button class="tab-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-semibold" data-tab="regulamin">Regulamin</button>
-        </div>
-
-        <!-- Treści zakładek -->
-        <section id="o-mnie" class="tab-content" style="display:block">
-            <h2 class="text-3xl font-bold dark-lilac-text border-b-2 lilac-border pb-2 mb-6">O mnie</h2>
-            <p>Nazywam się Sara Skowrońska. Ukończyłam filologię angielską oraz psychologię w zarządzaniu.</p>
-            <p>Mam doświadczenie w pracy w międzynarodowej korporacji, a także ponad rok praktyki jako nauczyciel w szkole językowej. Podczas studiów odbyłam również praktyki w biurze tłumaczeń. Łączę wiedzę językową i psychologiczną, co pozwala mi lepiej rozumieć różne style uczenia się i dostosowywać metody do indywidualnych potrzeb uczniów.</p>
-            <p><strong>Kontakt:</strong> <a href="mailto:suitedstudy@gmail.com" class="text-blue-600 hover:underline">suitedstudy@gmail.com</a></p>
-        </section>
-
-        <section id="zakres-zajec" class="tab-content" style="display:none">
-            <h2 class="text-3xl font-bold dark-lilac-text border-b-2 lilac-border pb-2 mb-6">Zakres zajęć</h2>
-            <ul class="list-disc ml-6">
-                <li>Język ogólny (A1–C1)</li>
-                <li>Konwersacje i przełamywanie bariery językowej</li>
-                <li>Przygotowanie do matury i egzaminów językowych</li>
-                <li>Język biznesowy i zawodowy</li>
+    <div class="relative w-full max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-white">
+        
+        <nav class="relative z-20 px-6 sm:px-12 py-4">
+            <div class="md:hidden flex justify-end">
+                <button id="menu-btn" class="text-gray-600 hover:text-gray-900">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+            
+            <ul id="menu-links" class="hidden md:flex justify-center items-center space-x-4 sm:space-x-8 text-lg font-semibold text-gray-700">
+                <li><a href="#o-mnie" class="dark-lilac-text hover:opacity-75 transition-opacity">O mnie</a></li>
+                <li><a href="#zakres-zajec" class="dark-lilac-text hover:opacity-75 transition-opacity">Zakres zajęć</a></li>
+                <li><a href="#cennik" class="dark-lilac-text hover:opacity-75 transition-opacity">Cennik</a></li>
+                <li><a href="#kontakt" class="dark-lilac-text hover:opacity-75 transition-opacity">Kontakt</a></li>
+                <li><a href="#regulamin" class="dark-lilac-text hover:opacity-75 transition-opacity">Regulamin</a></li>
             </ul>
-            <p class="mt-2 text-gray-600 text-sm">Zajęcia są prowadzone online (Google Meet).</p>
-        </section>
+        </nav>
 
-        <section id="cennik" class="tab-content" style="display:none">
-            <h2 class="text-3xl font-bold dark-lilac-text border-b-2 lilac-border pb-2 mb-6">Cennik zajęć</h2>
-            <table class="w-full text-left whitespace-nowrap border border-gray-300">
-                <thead class="bg-lilac-bg text-white">
-                    <tr>
-                        <th class="p-4">Rodzaj zajęć</th>
-                        <th class="p-4">Cena</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td class="p-4">Przygotowanie do matury</td><td class="p-4">100 zł / 50 min</td></tr>
-                    <tr class="bg-gray-50"><td class="p-4">Przygotowanie do egzaminu ósmoklasisty</td><td class="p-4">85 zł / 45 min</td></tr>
-                    <tr><td class="p-4">Zajęcia podnoszące poziom językowy (A2/B1)</td><td class="p-4">80 zł / 45 min</td></tr>
-                    <tr class="bg-gray-50"><td class="p-4">Zajęcia doszkalające (klasy 3-7)</td><td class="p-4">70 zł / 40 min</td></tr>
-                    <tr><td class="p-4">Business English</td><td class="p-4">100 zł / 50 min</td></tr>
-                </tbody>
-            </table>
-        </section>
+        <div class="absolute inset-0 bg-pattern"></div>
+        
+        <header class="relative text-center pt-12 pb-8 px-8">
+            <div class="inline-block p-4 rounded-full bg-white shadow-lg z-10">
+                <img src="https://i.ibb.co/6P6L4Sj/logo-ss-small.png" alt="Suited Study Logo" class="w-24 h-auto">
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-extrabold dark-lilac-text mt-6">Suited Study</h1>
+            <p class="text-xl sm:text-2xl text-gray-600 font-light mt-2">Angielski dopasowany do Ciebie</p>
+        </header>
 
-        <section id="regulamin" class=
+        <main class="relative px-6 sm:px-12 py-8 space-y-12 z-10">
+            
+            <section id="o-mnie">
+                <h2 class="text-3xl font-bold dark-lilac-text border-b-2 lilac-border pb-2 mb-6">O mnie</h2>
+                <div class="text-lg space-y-4">
+                    <p>Nazywam się Sara Skowrońska. Ukończyłam filologię angielską (licencjat) oraz psychologię w zarządzaniu (magister).</p>
+                    <p>Mam doświadczenie w pracy w międzynarodowej korporacji, a także ponad rok praktyki jako nauczyciel w szkole językowej. Podczas studiów odbyłam również praktyki w biurze tłumaczeń. Łączę wiedzę językową i psychologiczną, co pozwala mi lepiej rozumieć różne style uczenia się i dostosowywać metody do indywidualnych potrzeb uczniów.</p>
+                </div>
+            </section>
+
+            <section id="zakres-zajec">
+                <h2 class="text-3xl font-bold dark-lilac-text border-b-2 lilac-border pb-2 mb-6">Zakres zajęć</h2>
+                <ul class="text-lg space-y-2 list-none p-0">
+                    <li class="flex items-start">
+                        <span class="dark-lilac-text text-2xl mr-2">✦</span>
+                        <span>język ogólny (A1–C1)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="dark-lilac-text text-2xl mr-2">✦</span>
+                        <span>konwersacje i przełamywanie bariery językowej</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="dark-lilac-text text-2xl mr-2">✦</span>
+                        <span>przygotowanie do matury i egzaminów językowych</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="dark-lilac-text text-2xl mr-2">✦</span>
+                        <span>język biznesowy i zawodowy</span>
+                    </li>
+                </ul>
+                <p class="mt-4 text-gray-600 text-sm">Zajęcia są prowadzone online (Google Meet).</p>
+            </section>
+
+            <section id="cennik">
+                <h2 class="text-3xl font-bold dark-lilac-text border-b-2 lilac-border pb-2 mb-6">Cennik zajęć</h2>
+                <div class="overflow-x-auto rounded-lg shadow-md">
+                    <table class="w-full text-left whitespace-nowrap">
+                        <thead class="lilac-bg text-white">
+                            <tr>
+                                <th class="p-4 rounded-tl-lg">Rodzaj zajęć</th>
+                                <th class="p-4 rounded-tr-lg">Cena</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-gray-100 transition-colors">
+                                <td class="p-4">Przygotowanie do matury</td>
+                                <td class="p-4">100 zł / 50 min</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 transition-colors bg-gray-50">
+                                <td class="p-4">Przygotowanie do egzaminu ósmoklasisty</td>
+                                <td class="p-4">85 zł / 45 min</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 transition-colors">
+                                <td class="p-4">Zajęcia podnoszące poziom językowy<br><span class="text-sm text-gray-500 italic">Dla poziomów A2 lub B1.</span></td>
+                                <td class="p-4">80 zł / 45 min</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 transition-colors bg-gray-50">
+                                <td class="p-4">Zajęcia doszkalające<br><span class="text-sm text-gray-500 italic">Pomoc w bieżących tematach lekcyjnych, dla klas 3-7.</span></td>
+                                <td class="p-4">70 zł / 40 min</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 transition-colors">
+                                <td class="p-4">Business English</td>
+                                <td class="p-4">100 zł / 50 min</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="kontakt">
+                <h2 class="text-3xl font-bold dark-lilac-text border-b-2 lilac-border pb-2 mb-6">Zacznijmy naukę!</h2>
+                <div class="text-center bg-gray-50 p-8 rounded-2xl">
+                    <p class="text-lg text-gray-700 mb-6">Chcesz przełamać barierę językową i zacząć mówić płynnie? Napisz do mnie, aby umówić się na pierwszą lekcję lub zapytać o szczegóły.</p>
+                    <a href="mailto:twoj.email@przyklad.com" class="inline-block bg-[#8E6D9E] text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-opacity-90 transition-transform hover:scale-105 shadow-lg">
+                        Napisz e-mail
+                    </a>
+                    <p class="mt-6 text-gray-600">lub zadzwoń: <strong>+48 123 456 789</strong></p>
+                </div>
+            </section>
+
+            <section id="regulamin">
+                <h2 class="text-3xl font-bold dark-lilac-text border-b-2 lilac-border pb-2 mb-6">Regulamin</h2>
+                <div class="text-base space-y-6 text-gray-800">
+                    <div>
+                        <p class="font-semibold text-gray-700">1. Postanowienia ogólne</p>
+                        <ul class="text-sm space-y-1 list-none p-0 mt-1">
+                            <li>Regulamin określa zasady udziału w zajęciach językowych prowadzonych przez Suited Study.</li>
+                            <li>Uczestnikiem zajęć jest osoba, która zapisała się na lekcję i zaakceptowała warunki regulaminu.</li>
+                            <li>Zajęcia odbywają się online za pomocą komunikatora lub innej ustalonej platformy.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-700">2. Zapisy i organizacja zajęć</p>
+                        <ul class="text-sm space-y-1 list-none p-0 mt-1">
+                            <li>Zajęcia umawiane są indywidualnie drogą mailową lub telefoniczną.</li>
+                            <li>Termin zajęć uznaje się za potwierdzony po akceptacji przez obie strony.</li>
+                            <li>Czas trwania i cena zajęć zależą od wybranego wariantu z cennika.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-700">3. Odwoływanie i zmiana terminu zajęć</p>
+                        <ul class="text-sm space-y-1 list-none p-0 mt-1">
+                            <li>Uczestnik ma prawo do odwołania zajęć bez ponoszenia kosztów najpóżej 24 godziny przed umówionym terminem.</li>
+                            <li>W przypadku nieobecności prowadzącego zajęcia są odwoływane lub przekładane bez dodatkowych kosztów.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-700">4. Płatności</p>
+                        <ul class="text-sm space-y-1 list-none p-0 mt-1">
+                            <li>Płatności dokonywane są przelewem lub BLIKiem.</li>
+                            <li>W przypadku pakietów zajęć płatność pobierana jest z góry.</li>
+                            <li>Brak płatności w ustalonym terminie może skutkować wstrzymaniem kolejnych lekcji.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-700">5. Materiały dydaktyczne</p>
+                        <ul class="text-sm space-y-1 list-none p-0 mt-1">
+                            <li>Uczestnik ma prawo do otrzymywania materiałów przygotowanych przez prowadzącego na potrzeby zajęć.</li>
+                            <li>Materiały te przeznaczone są wyłącznie do użytku własnego i nie mogą być kopiowane ani rozpowszechniane w celach komercyjnych.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-700">6. Postanowienia końcowe</p>
+                        <ul class="text-sm space-y-1 list-none p-0 mt-1">
+                            <li>Regulamin wchodzi w życie z dniem jego opublikowania i obowiązuje do odwołania.</li>
+                            <li>Uczestnictwo w zajęciach oznacza akceptację powyższych warunków.</li>
+                            <li>Prowadzący zastrzega sobie prawo do wprowadzania zmian w regulaminie.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menuLinks = document.getElementById('menu-links');
+
+        menuBtn.addEventListener('click', () => {
+            // Przełącz widoczność menu na urządzeniach mobilnych
+            menuLinks.classList.toggle('hidden');
+            
+            // Dodaj/Usuń klasy dla stylu mobilnego (pionowy układ)
+            menuLinks.classList.toggle('flex');
+            menuLinks.classList.toggle('flex-col');
+            menuLinks.classList.toggle('space-y-4');
+            menuLinks.classList.toggle('text-center');
+            menuLinks.classList.toggle('py-4');
+            
+            // Usuń klasę, która jest tylko dla komputerów, aby uniknąć konfliktu
+            menuLinks.classList.remove('md:flex');
+        });
+    </script>
+</body>
+</html>
